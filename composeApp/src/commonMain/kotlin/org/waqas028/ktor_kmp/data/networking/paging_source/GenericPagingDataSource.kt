@@ -4,7 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import coil3.network.HttpException
 import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.io.IOException
+import okio.IOException
 
 class GenericPagingDataSource<T : Any, R>(
     private val apiService: suspend (R) -> List<T>,

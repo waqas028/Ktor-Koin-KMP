@@ -83,8 +83,10 @@ kotlin {
             implementation(libs.kotlinx.coroutines.core)
 
             //coil
-            implementation(libs.coil3.coil.compose)
-            implementation(libs.coil.network.okhttp)
+            implementation(libs.coil.compose.core)
+            implementation(libs.coil.mp)
+            implementation(libs.coil.network.ktor)
+            implementation(libs.coil.compose)
 
             //paging 3 library
             //implementation(libs.androidx.paging.compose)

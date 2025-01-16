@@ -20,9 +20,10 @@ navigationRuntimeKtx = "2.7.0-alpha07"
 koin = "4.0.0"
 koinComposeMultiplatform = "4.0.0"
 lifecycleViewModel = "2.8.7"
-ktor = "3.0.3"
+ktor = "3.0.0-wasm2"
 coroutines = "1.9.0"
-coilCompose = "3.0.4"
+coilCompose = "3.0.0-alpha08"
+coil3 = "3.0.0-alpha06"
 pagingCommonVersion = "3.3.0-alpha02-0.4.0"
 
 [libraries]
@@ -68,8 +69,10 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 
 #coil
-coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
-coil3-coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
+coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil3" }
+coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
 
 #paging 3
 paging-compose-common = { module = "app.cash.paging:paging-compose-common", version.ref = "pagingCommonVersion" }
