@@ -34,8 +34,15 @@ https://github.com/user-attachments/assets/45cbfbf5-edb5-4ad8-8441-dcbde2bc753c
 - Xcode 14 or later (for iOS development)
 - Kotlin 1.9 or later
 
-### Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/waqas028/Ktor-Koin-KMP.git
-   cd KMM-FakeStoreApp
+ ## 🤝 Want to Contribute?
+All contributions are welcomed. This project is still in development. If you encounter any problems, please create an issue [here](https://github.com/waqas028/Ktor-Koin-KMP/issues) & if you want to contribute to this project, PRs are welcomed! 🙂
+
+## 👨‍💻 Developed By
+
+<a href="https://twitter.com/Shahzad_Ansari3" target="_blank">
+  <img src="https://github.com/user-attachments/assets/99199ad1-a69d-4ceb-8599-e495a1ed937b" width="70" align="left">
+</a>
+
+**Muhammad Waqas**
+
+[![Linkedin](https://img.shields.io/badge/-linkedin-grey?logo=linkedin)](https://www.linkedin.com/in/muhammad-waqas-4399361a3)
