@@ -29,6 +29,65 @@ https://github.com/user-attachments/assets/45cbfbf5-edb5-4ad8-8441-dcbde2bc753c
 
 ## Getting Started
 
+## createHttpClient
+```kotlin
+fun createHttpClient(engine: HttpClientEngine): HttpClient {
+    return HttpClient(engine) {
+        install(Logging) {
+            level = LogLevel.ALL
+        }
+        install(HttpTimeout) {
+            socketTimeoutMillis = 60_000
+            requestTimeoutMillis = 60_000
+        }
+        defaultRequest {
+            header("Content-Type", "application/json")
+            url(Constant.BASE_URL)
+        }
+        install(ContentNegotiation) {
+            json(
+                json = Json {
+                    ignoreUnknownKeys = true
+                }
+            )
+        }
+    }
+}
+```
+
+### API Implementation
+```kotlin
+class ApiImplementation : APIInterface {
+    override suspend fun getProductList(productDTO: ProductDTO): Result<List<Product>, NetworkError> {
+        val response = try {
+            productDTO.httpClient.get(
+                urlString = "products/"
+            ) {
+                parameter("offset", productDTO.offset)
+                parameter("limit", productDTO.limit)
+            }
+        } catch(e: UnresolvedAddressException) {
+            return Result.Error(NetworkError.NO_INTERNET)
+        } catch(e: SerializationException) {
+            return Result.Error(NetworkError.SERIALIZATION)
+        }
+
+        return when(response.status.value) {
+            in 200..299 -> {
+                val productResponse = response.body<List<Product>>()
+                Result.Success(productResponse)
+            }
+            401 -> Result.Error(NetworkError.UNAUTHORIZED)
+            409 -> Result.Error(NetworkError.CONFLICT)
+            408 -> Result.Error(NetworkError.REQUEST_TIMEOUT)
+            413 -> Result.Error(NetworkError.PAYLOAD_TOO_LARGE)
+            in 500..599 -> Result.Error(NetworkError.SERVER_ERROR)
+            else -> Result.Error(NetworkError.UNKNOWN)
+        }
+    }
+}
+```
+
 ### Prerequisites
 - Android Studio Electric Eel or later
 - Xcode 14 or later (for iOS development)
