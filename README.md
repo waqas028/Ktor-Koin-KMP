@@ -22,7 +22,10 @@ This is a Kotlin Multiplatform Mobile (KMM) project that fetches products from t
 https://github.com/user-attachments/assets/0850a82d-37d4-41e8-893c-a670bd1deec3
 
 ## IOS
+https://github.com/user-attachments/assets/fbfbfbdb-2ba9-4826-aa22-5721b9976446
 
+## Desktop
+https://github.com/user-attachments/assets/45cbfbf5-edb5-4ad8-8441-dcbde2bc753c
 
 ## Getting Started
 
