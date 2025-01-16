@@ -1,14 +1,38 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
+# Fake Store Products App with Ktor, Coil, and Koin in Compose Multiplatform (KMP)
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+This is a Kotlin Multiplatform Mobile (KMM) project that fetches products from the Fake Store API and displays them in a list. The app uses Ktor for API calls, Coil for image loading, and follows the MVVM architecture with Koin for dependency injection.
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+## Features
+- Fetch products from [Fake Store API](https://fakeapi.platzi.com/)
+- Display products in a list on the home screen
+- Load product images using Coil
+- Clean MVVM architecture
+- Dependency injection with Koin
+- Shared code between Android and iOS using KMM
+
+## Tech Stack
+- **Kotlin Multiplatform Mobile (KMM)**: Share business logic between Android and iOS
+- **Ktor**: HTTP client for API communication
+- **Coil**: Image loading for Android
+- **Koin**: Dependency injection
+- **MVVM Architecture**: Clean and scalable code structure
+
+## Demo
+## Android
+https://github.com/user-attachments/assets/0850a82d-37d4-41e8-893c-a670bd1deec3
+
+## IOS
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+## Getting Started
+
+### Prerequisites
+- Android Studio Electric Eel or later
+- Xcode 14 or later (for iOS development)
+- Kotlin 1.9 or later
+
+### Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/waqas028/Ktor-Koin-KMP.git
+   cd KMM-FakeStoreApp
